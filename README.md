@@ -64,7 +64,7 @@ ___
 
 ![전처리03](./Images/03.preprocessing03-최종결과.jpg)
 
-![전처리04](./Images/03.preprocessing04- count0 제외.jpg)
+![전처리04](./Images/03.preprocessing04_expt_count0.jpg)
 
 
 - 마지막에 세그멘테이션 된 데이터 활용을 위하여 카운트가 0인 것은 삭제 후 인덱스 초기화
@@ -76,7 +76,7 @@ ___
 ## 학습
 
 
-![학습](./Images/04.train01-Stratified Group KFold .jpg)
+![학습](./Images/04.train01-Stratified_Group_KFold.jpg)
 
 
 **Stratified Group KFold란?**
