@@ -9,7 +9,7 @@ ___
 - 의료분야에서도 활발한 AI 연구
 - 의료법과 개인정보법에 의해서 쉽게 수집하고 활용할 수 없는 의료데이터
 - 캐글 데이터 중 의료데이터 이미지 세그멘테이션 대회 데이터셋 활용
-- ![Dataset]<https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation/data>
+- [Dataset]<https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation/data>
 
 ___
 
@@ -80,16 +80,19 @@ ___
 
 
 **Stratified Group KFold란?**
+
 타겟 데이터의 분포를 유지하며 Train/Valid set을 나누는 Stratified K Fold와 동일한 그룹(= 같은 이미지)에서 나온 데이터가
 Train set과 Valid set에 동시에 포함되지 않도록 하는 Group K Fold를 결합한 방법.
 
 
 **Stratified Group KFold 사용 이유**
+
 한 이미지에 여러 개의 Object가 있는 데이터셋. 1개의 데이터에 여러 개의 label이 붙어있음.
 이미지 단위로 Train set과 Validation set을 나누게 될 경우, 특정한 Object가 Validation set에 아예 포함되지 않거나, 지나치게 많게 혹은 적게 포함되는 경우가 발생. 이를 해결하기 위해 Stratified Group KFold 사용. 
 
 
 **성능평가 지표 -  dice, iou, loss**
+
 - dice 지표: 영상 이미지등에서 정답과 예측값간의 차이를 알기위해 사용. 
              F1 Score와 개념상 같지만, 이미지, 영상처리에서 더 강조를 하는 경향.
 - iou: 교집합 영역 넓이 / 합집합 영역 넓이
@@ -104,6 +107,7 @@ Train set과 Valid set에 동시에 포함되지 않도록 하는 Group K Fold�
 
 
 **unet**
+
 - Biomedical 분야에서 이미지 분할(Image Segmentation)을 목적으로 제안된 End-to-End 방식의 Fully-Convolutional Network 기반 모델
 - 적은 양의 학습 데이터로도 Data Augmentation을 활용해 여러 Biomedical Image Segmentation 문제에서 우수한 성능을 보임
 - 컨텍스트 정보를 잘 사용하면서도 정확히 지역화함
@@ -112,6 +116,7 @@ Train set과 Valid set에 동시에 포함되지 않도록 하는 Group K Fold�
 
 
 **efficientnetb7**
+
 - 네트워크의 Depth, Width, Resolution 간의 조율(Balance)을 통해, 효과적이면서 좋은 성능을 얻음
 - 적은 파라미터로 효율적인 성능. 쉬운 Architecture 구성으로 높은 성능을 가져올 수 있음.
 
@@ -130,8 +135,8 @@ ___
 ## reference
 
 
-[EDA]([http://www.google.co.kr](https://www.kaggle.com/code/fismoilo/gi-tract-image-segmentation-setup-visualization).
+[EDA]<https://www.kaggle.com/code/fismoilo/gi-tract-image-segmentation-setup-visualization>
 
 
-[Train and Validation](https://www.kaggle.com/code/ammarnassanalhajali/uwmgi-unet-keras-train-with-eda/notebook).
+[Train and Validation]<https://www.kaggle.com/code/ammarnassanalhajali/uwmgi-unet-keras-train-with-eda/notebook>
  
