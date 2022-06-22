@@ -9,8 +9,7 @@ ___
 - 의료분야에서도 활발한 AI 연구
 - 의료법과 개인정보법에 의해서 쉽게 수집하고 활용할 수 없는 의료데이터
 - 캐글 데이터 중 의료데이터 이미지 세그멘테이션 대회 데이터셋 활용
-
-![Dataset]<https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation/data>
+- ![Dataset]<https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation/data>
 
 ___
 
@@ -58,10 +57,14 @@ ___
 
 ## 전처리
 
+
 ![전처리01](./Images/03.preprocessing01.jpg)
+
 ![전처리02](./Images/03.preprocessing02.jpg)
-![전처리03](./Images/03.preprocessing03.jpg)
-![전처리04](./Images/03.preprocessing04.jpg)
+
+![전처리03](./Images/03.preprocessing03-최종결과.jpg)
+
+![전처리04](./Images/03.preprocessing04- count0 제외.jpg)
 
 
 - 마지막에 세그멘테이션 된 데이터 활용을 위하여 카운트가 0인 것은 삭제 후 인덱스 초기화
@@ -72,11 +75,14 @@ ___
 
 ## 학습
 
-![학습](./Images/04.train01-Stratified Group KFold .jpg)
+
+![학습](./Images/04.train01-Stratified Group KFold.jpg)
+
 
 **Stratified Group KFold란?**
 타겟 데이터의 분포를 유지하며 Train/Valid set을 나누는 Stratified K Fold와 동일한 그룹(= 같은 이미지)에서 나온 데이터가
 Train set과 Valid set에 동시에 포함되지 않도록 하는 Group K Fold를 결합한 방법.
+
 
 **Stratified Group KFold 사용 이유**
 한 이미지에 여러 개의 Object가 있는 데이터셋. 1개의 데이터에 여러 개의 label이 붙어있음.
@@ -90,9 +96,13 @@ Train set과 Valid set에 동시에 포함되지 않도록 하는 Group K Fold�
 - Dice Loss: Loss는 어떤 학습된 모델을 실제 데이터에 적용했을 때 모델의 추정 오차로 인해 발생하는 손실. 
              Dice loss 는 segmentation 구조에 많이 사용되는 손실함수.
 
+
 **학습에 사용 모델**
 
+
 ![Unet](./Images/04.train04-unet01.png)
+
+
 **unet**
 - Biomedical 분야에서 이미지 분할(Image Segmentation)을 목적으로 제안된 End-to-End 방식의 Fully-Convolutional Network 기반 모델
 - 적은 양의 학습 데이터로도 Data Augmentation을 활용해 여러 Biomedical Image Segmentation 문제에서 우수한 성능을 보임
@@ -100,7 +110,8 @@ Train set과 Valid set에 동시에 포함되지 않도록 하는 Group K Fold�
 - End-to-End 구조로 속도가 빠름
 - 속도가 빠른 이유는 검증이 끝난 곳은 건너뛰고 다음 Patch부터 새 검증을 하기 때문.
 
-**efficientnetb7 **
+
+**efficientnetb7**
 - 네트워크의 Depth, Width, Resolution 간의 조율(Balance)을 통해, 효과적이면서 좋은 성능을 얻음
 - 적은 파라미터로 효율적인 성능. 쉬운 Architecture 구성으로 높은 성능을 가져올 수 있음.
 
@@ -119,7 +130,7 @@ ___
 ## reference
 
 
-[EDA]([http://www.google.co.kr](https://www.kaggle.com/code/fismoilo/gi-tract-image-segmentation-setup-visualization)).
+[EDA]([http://www.google.co.kr](https://www.kaggle.com/code/fismoilo/gi-tract-image-segmentation-setup-visualization).
 
 
 [Train and Validation](https://www.kaggle.com/code/ammarnassanalhajali/uwmgi-unet-keras-train-with-eda/notebook).
