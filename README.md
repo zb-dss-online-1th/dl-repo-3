@@ -76,7 +76,7 @@ ___
 ## 학습
 
 
-![학습](./Images/04.train01-Stratified Group KFold.jpg)
+![학습](./Images/04.train01-Stratified Group KFold .jpg)
 
 
 **Stratified Group KFold란?**
