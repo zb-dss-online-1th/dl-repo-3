@@ -22,6 +22,8 @@ ___
 - 약 11만여개 데이터, 세그멘테이션 된 데이터는 약 3만개
 
 
+
+
 #### 2. 전체 데이터는 어떻게 라벨링 되어 있는지
 
 
@@ -29,11 +31,15 @@ ___
 - 1개 케이스에 위, 대장, 소장 라벨링
 
 
+
+
 #### 3. 세그멘테이션 된 데이터의 비율
 
 
 ![25%/ 42% / 33%](./Images/02.dataset03.jpg)
 - 25%/ 42% / 33%
+
+
 
 
 #### 4. 세그멘테이션 된 데이터의 데이터 마스크
@@ -67,6 +73,7 @@ ___
 ![전처리04](./Images/03.preprocessing04_expt_count0.jpg)
 
 
+
 - 마지막에 세그멘테이션 된 데이터 활용을 위하여 카운트가 0인 것은 삭제 후 인덱스 초기화
 
 
@@ -85,10 +92,14 @@ ___
 Train set과 Valid set에 동시에 포함되지 않도록 하는 Group K Fold를 결합한 방법.
 
 
+
+
 **Stratified Group KFold 사용 이유**
 
 한 이미지에 여러 개의 Object가 있는 데이터셋. 1개의 데이터에 여러 개의 label이 붙어있음.
 이미지 단위로 Train set과 Validation set을 나누게 될 경우, 특정한 Object가 Validation set에 아예 포함되지 않거나, 지나치게 많게 혹은 적게 포함되는 경우가 발생. 이를 해결하기 위해 Stratified Group KFold 사용. 
+
+
 
 
 **성능평가 지표 -  dice, iou, loss**
@@ -98,6 +109,8 @@ Train set과 Valid set에 동시에 포함되지 않도록 하는 Group K Fold�
 - iou: 교집합 영역 넓이 / 합집합 영역 넓이
 - Dice Loss: Loss는 어떤 학습된 모델을 실제 데이터에 적용했을 때 모델의 추정 오차로 인해 발생하는 손실. 
              Dice loss 는 segmentation 구조에 많이 사용되는 손실함수.
+
+
 
 
 **학습에 사용 모델**
@@ -115,6 +128,8 @@ Train set과 Valid set에 동시에 포함되지 않도록 하는 Group K Fold�
 - 속도가 빠른 이유는 검증이 끝난 곳은 건너뛰고 다음 Patch부터 새 검증을 하기 때문.
 
 
+
+
 **efficientnetb7**
 
 - 네트워크의 Depth, Width, Resolution 간의 조율(Balance)을 통해, 효과적이면서 좋은 성능을 얻음
@@ -128,6 +143,8 @@ ___
 
 1-1) count = 0  삭제한 케이스 과적합 문제 발생. 검증 데이터와 심한 괴리가 존재
 1-2) 삭제 안한 케이스가 0 삭제한 케이스보다 더 좋은 성능
+
+
 
 ___
 
