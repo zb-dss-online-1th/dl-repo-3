@@ -52,6 +52,8 @@ _매우 간단한 비손실 압축 방법. 데이터에서 같은 값이 연속�
 
 #### 5. 원본, 마스크, 겹쳐보기 이미지 
 
+___
+
 
 ## 전처리
 
@@ -61,8 +63,10 @@ _매우 간단한 비손실 압축 방법. 데이터에서 같은 값이 연속�
 ![전처리04](./Images/03.preprocessing04.jpg)
 
 
-- 마지막에 세그멘테이션 된 데이터 활용을 위하여 카운트가 0인 것은 삭제 후 인덱스 초기화 (이미지 첨부)
+- 마지막에 세그멘테이션 된 데이터 활용을 위하여 카운트가 0인 것은 삭제 후 인덱스 초기화
 
+
+___
 
 
 ## 학습
@@ -87,30 +91,33 @@ Train set과 Valid set에 동시에 포함되지 않도록 하는 Group K Fold�
 
 **학습에 사용 모델**
 
+![Unet](./Images/04.train04-unet01.png)
+**unet**
+- Biomedical 분야에서 이미지 분할(Image Segmentation)을 목적으로 제안된 End-to-End 방식의 Fully-Convolutional Network 기반 모델
+- 적은 양의 학습 데이터로도 Data Augmentation을 활용해 여러 Biomedical Image Segmentation 문제에서 우수한 성능을 보임
+- 컨텍스트 정보를 잘 사용하면서도 정확히 지역화함
+- End-to-End 구조로 속도가 빠름
+- 속도가 빠른 이유는 검증이 끝난 곳은 건너뛰고 다음 Patch부터 새 검증을 하기 때문.
 
-unet 설명(이미지)
-unet의 장점
-적은 양의 학습 데이터로도 Data Augmentation을 활용해 여러 Biomedical Image Segmentation 문제에서 우수한 성능을 보임
-컨텍스트 정보를 잘 사용하면서도 정확히 지역화함
-End-to-End 구조로 속도가 빠름
-속도가 빠른 이유는 검증이 끝난 곳은 건너뛰고 다음 Patch부터 새 검증을 하기 때문.
+**efficientnetb7 **
+- 네트워크의 Depth, Width, Resolution 간의 조율(Balance)을 통해, 효과적이면서 좋은 성능을 얻음
+- 적은 파라미터로 효율적인 성능. 쉬운 Architecture 구성으로 높은 성능을 가져올 수 있음.
 
-efficientnetb7 설명
-네트워크의 Depth, Width, Resolution 간의 조율(Balance)을 통해, 효과적이면서 좋은 성능을 얻음
-적은 파라미터로 효율적인 성능. 쉬운 Architecture 구성으로 높은 성능을 가져올 수 있음.
 
-학습
+___
 
-7ch 결론
+
+## 결론
 
 1-1) count = 0  삭제한 케이스 과적합 문제 발생. 검증 데이터와 심한 괴리가 존재
 1-2) 삭제 안한 케이스가 0 삭제한 케이스보다 더 좋은 성능
 
-=====
-reference
+___
 
-eda
-https://www.kaggle.com/code/fismoilo/gi-tract-image-segmentation-setup-visualization
-train and valid 
-https://www.kaggle.com/code/ammarnassanalhajali/uwmgi-unet-keras-train-with-eda/notebook
+
+## reference
+
+
+[EDA]([http://www.google.co.kr](https://www.kaggle.com/code/fismoilo/gi-tract-image-segmentation-setup-visualization)).
+[Train and Validation](https://www.kaggle.com/code/ammarnassanalhajali/uwmgi-unet-keras-train-with-eda/notebook).
  
