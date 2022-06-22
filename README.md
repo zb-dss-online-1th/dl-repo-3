@@ -9,6 +9,7 @@ ___
 - 의료분야에서도 활발한 AI 연구
 - 의료법과 개인정보법에 의해서 쉽게 수집하고 활용할 수 없는 의료데이터
 - 캐글 데이터 중 의료데이터 이미지 세그멘테이션 대회 데이터셋 활용
+
 ![Dataset]<https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation/data>
 
 ___
@@ -119,5 +120,7 @@ ___
 
 
 [EDA]([http://www.google.co.kr](https://www.kaggle.com/code/fismoilo/gi-tract-image-segmentation-setup-visualization)).
+
+
 [Train and Validation](https://www.kaggle.com/code/ammarnassanalhajali/uwmgi-unet-keras-train-with-eda/notebook).
  
