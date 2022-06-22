@@ -53,33 +53,40 @@ _매우 간단한 비손실 압축 방법. 데이터에서 같은 값이 연속�
 #### 5. 원본, 마스크, 겹쳐보기 이미지 
 
 
-전처리
+## 전처리
+
+![전처리01](./Images/03.preprocessing01.jpg)
+![전처리02](./Images/03.preprocessing02.jpg)
+![전처리03](./Images/03.preprocessing03.jpg)
+![전처리04](./Images/03.preprocessing04.jpg)
 
 
-(전처리 이미지 순서대로 첨부)
-
-마지막에 세그멘테이션 된 데이터 활용을 위하여 카운트가 0인 것은 삭제 후 인덱스 초기화 (이미지 첨부)
+- 마지막에 세그멘테이션 된 데이터 활용을 위하여 카운트가 0인 것은 삭제 후 인덱스 초기화 (이미지 첨부)
 
 
 
-학습
-(04.train01-Stratified Group KFold .jpg 이미지 첨부)
+## 학습
 
-Stratified Group KFold란?
-타겟 데이터의 분포를 유지하며 Train/Valid set을 나누는 Stratified K Fold와 동일한 그룹(= 같은 이미지)에서 나온 데이터가 Train set과 Valid set에 동시에 포함되지 않도록 하는 Group K Fold를 결합한 방법.
+![학습](./Images/04.train01-Stratified Group KFold .jpg)
 
-Stratified Group KFold 사용 이유
+**Stratified Group KFold란?**
+타겟 데이터의 분포를 유지하며 Train/Valid set을 나누는 Stratified K Fold와 동일한 그룹(= 같은 이미지)에서 나온 데이터가
+Train set과 Valid set에 동시에 포함되지 않도록 하는 Group K Fold를 결합한 방법.
+
+**Stratified Group KFold 사용 이유**
 한 이미지에 여러 개의 Object가 있는 데이터셋. 1개의 데이터에 여러 개의 label이 붙어있음.
 이미지 단위로 Train set과 Validation set을 나누게 될 경우, 특정한 Object가 Validation set에 아예 포함되지 않거나, 지나치게 많게 혹은 적게 포함되는 경우가 발생. 이를 해결하기 위해 Stratified Group KFold 사용. 
 
 
-성능평가 지표 -  dice, iou, loss
-dice 지표 - 영상 이미지등에서 정답과 예측값간의 차이를 알기위해 사용. F1 Score와 개념상 같지만, 이미지, 영상처리에서 더 강조를 하는 경향.
-iou - 
-Dice Loss - Loss는 어떤 학습된 모델을 실제 데이터에 적용했을 때 모델의 추정 오차로 인해 발생하는 손실. Dice loss 는 segmentation 구조에 많이 사용되는 손실함수.
+**성능평가 지표 -  dice, iou, loss**
+- dice 지표: 영상 이미지등에서 정답과 예측값간의 차이를 알기위해 사용. 
+             F1 Score와 개념상 같지만, 이미지, 영상처리에서 더 강조를 하는 경향.
+- iou: 교집합 영역 넓이 / 합집합 영역 넓이
+- Dice Loss: Loss는 어떤 학습된 모델을 실제 데이터에 적용했을 때 모델의 추정 오차로 인해 발생하는 손실. 
+             Dice loss 는 segmentation 구조에 많이 사용되는 손실함수.
 
-학습에 사용 모델 
-(사용 모델 레이어 다 복사에서 접기가 가능하도록 해주세요)
+**학습에 사용 모델**
+
 
 unet 설명(이미지)
 unet의 장점
